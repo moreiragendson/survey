@@ -32,7 +32,12 @@ pnad <- pnad %>%
 names(pnad)
 
 capitais <- pnad %>% 
-  filter(!is.na(Capital))
+  filter(!is.na(Capital)) %>% 
+  mutate(Capital = str_remove_all(Capital, pattern="de"),
+         Capital = str_sub(Capital, start = 10, end = -1),
+         Capital = str_trim(Capital))
+
+
 
 capitais <- capitais %>% 
   as_survey_design(

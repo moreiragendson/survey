@@ -2,10 +2,15 @@
 title: 'Atividade prática: Construção de indicadores'
 author: "Gendson Teles Moreira"
 date: "`r Sys.Date()`"
-output: pdf_document
+output:
+  pdf_document:
+    fig_width: 12
 ---
 
 ```{r setup, include=FALSE}
+library(tidyverse)
+source("pnad_indicadores.R")
+source("0_barh.R")
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -19,4 +24,34 @@ knitr::opts_chunk$set(echo = FALSE)
     4.  Índice de envelhecimento
 2.  Período de análise: 2º trimeste de 2022. Unidades de análise geográficas: todas as capitais brasileiras.
 3.  Base de dados: Pesquisa Nacional por Amostra de Domicílios Contínua (PNADC)
-4.  R script para obtenção e transformação da base de dados aqui.
+4.  R script para obtenção e transformação da base de dados [aqui](https://github.com/moreiragendson/survey/blob/master/pnad_indicadores.R).
+5.  R script contendo cálculo de indicadores [aqui](https://github.com/moreiragendson/survey/blob/master/pnad_indicadores.R).
+6.  Apresentação de resultados abaixo:
+
+```{r}
+barh(data=razao_sexo, x=Capital, y=razao_sexo)+
+  labs(x="Capitais brasileiras",
+       y="Razão de sexo",
+       caption="PNADC 2022/2º Trimestre")
+```
+
+```{r}
+barh(data=razao_dependencia_jovem, x=Capital, y=razao_dependencia_jovem)+
+  labs(x="Capitais brasileiras",
+       y="Razão de dependência jovem",
+       caption="PNADC 2022/2º Trimestre")
+```
+
+```{r}
+barh(data=razao_dependencia_idosos, x=Capital, y=razao_dependencia_idosos)+
+  labs(x="Capitais brasileiras",
+       y="Razão de dependência de idosos",
+       caption="PNADC 2022/2º Trimestre")
+```
+
+```{r}
+barh(data=indice_envelhecimento, x=Capital, y=indice_envelhecimento)+
+  labs(x="Capitais brasileiras",
+       y="Índice de envelhecimento",
+       caption="PNADC 2022/2º Trimestre")
+```
