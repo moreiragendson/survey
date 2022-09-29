@@ -1,0 +1,22 @@
+---
+title: 'Atividade prática: Construção de indicadores'
+author: "Gendson Teles Moreira"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+1.  Os quatro indicadores escolhidos foram:
+    1.  Razão de sexo
+
+    2.  Razão de dependência jovem
+
+    3.  Razão de dependência de idosos
+
+    4.  Índice de envelhecimento
+2.  Período de análise: 2º trimeste de 2022. Unidades de análise geográficas: todas as capitais brasileiras.
+3.  Base de dados: Pesquisa Nacional por Amostra de Domicílios Contínua (PNADC)
+4.  R script para obtenção e transformação da base de dados aqui.
